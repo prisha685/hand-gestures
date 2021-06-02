@@ -1,0 +1,21 @@
+body
+{
+  color: white;
+  background-image:green ;
+}
+span
+{
+  font-size: 30px;
+}
+.heading{
+  font-size: 18px;
+  border-radius: 10px;
+  letter-spacing: 10px;
+}
+label {
+  font-size: 14px;
+  color: green;
+  padding: 6px;
+  border-radius:10px;
+  background-color: blue;
+}
