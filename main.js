@@ -17,3 +17,26 @@ classifier=ml5.imageClassifier('https://teachablemachine.withgoogle.com/models/2
 function modelLoaded() {
     console.log('modelLoaded');
 }
+function check() {
+img=document.getElementById('captured_image');
+classifier.classifiy(img,gotResult);
+}
+function gotResult(error,results) {
+
+    if(results[0].label=="Raised hand gesture"){
+        document.getElementById("icon_of_hg").innerHTML="&#9995;";
+    }
+    if(results[0].label=="Clapping hand gesture"){
+        document.getElementById("icon_of_hg").innerHTML="&#128079;";
+    }
+    if(results[0].label=="Thumbs up hand gesture"){
+        document.getElementById("icon_of_hg").innerHTML="&#128077;";
+    }
+}
+
+function speak() {
+    var synth=window.speechSynthesis;
+    speak_data_1="The first prediction is" + prediction_1;
+    var utterThis=new SpeechSynthesisUtterance (speak_data_1);
+    synth.speak(utterThis);
+};
